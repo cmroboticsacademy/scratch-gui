@@ -3,14 +3,19 @@ import { connect } from "react-redux";
 import Unity from "react-unity-webgl";
 
 class UnityPane extends React.Component {
-  render() {
-    return (
-      <div className="unity-container">
-        <h2>Unity Content</h2>
-        <Unity unityContent={this.props.unity} />
-      </div>
-    );
-  }
+
+componentDidMount() {
+  this.props.unity.on('MessageFromUnity', () => {console.log("Unity -> React");})
+}
+
+render() {
+  return (
+    <div className="unity-container">
+      <h2>Unity Content</h2>
+      <Unity unityContent={this.props.unity} />
+    </div>
+  );
+}
 }
 
 const mapStateToProps = (state) => {
