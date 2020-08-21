@@ -317,5 +317,20 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: "cmra blocks",
+        extensionId: 'someBlocks',
+        iconURL: null,
+        insetIconURL: musicInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="CMRA ROCKS IT ROOCKS."
+                description="NOT THE PIC"
+                id="gui.extension.cmra.description"
+            />
+        ),
+        featured: true,
+        disabled: false
     }
 ];
